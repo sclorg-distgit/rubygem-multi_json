@@ -6,7 +6,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 1.10.1
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: A common interface to multiple JSON libraries
 Group: Development/Languages
 License: MIT
@@ -19,7 +19,7 @@ BuildRequires: %{?scl_prefix_ruby}ruby(release)
 BuildRequires: %{?scl_prefix_ruby}rubygems-devel >= 1.3.6
 BuildRequires: %{?scl_prefix_ruby}ruby
 BuildRequires: %{?scl_prefix}rubygem(rspec)
-#BuildRequires: %{?scl_prefix}rubygem(json)
+BuildRequires: %{?scl_prefix_ruby}rubygem(json)
 #BuildRequires: %{?scl_prefix}rubygem(json_pure)
 BuildArch: noarch
 # OkJson is allowed to be bundled:
@@ -101,6 +101,9 @@ popd
 %{gem_instdir}/spec
 
 %changelog
+* Wed Apr 06 2016 Pavel Valena <pvalena@redhat.com> - 1.10.1-5
+- Add rubygem-json to BuildReqires
+
 * Wed Feb 24 2016 Pavel Valena <pvalena@redhat.com> - 1.10.1-4
 - Update to 1.10.1
 
